@@ -1,0 +1,43 @@
+# =========================
+# IDE files
+# =========================
+.idea/
+*.iml
+.vscode/
+*.code-workspace
+
+# =========================
+# Build / output folders
+# =========================
+out/
+bin/
+build/
+target/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs and temporary files
+# =========================
+*.log
+*.tmp
+*.swp
+*.swo
+
+# =========================
+# Package managers (if using Node)
+# =========================
+node_modules/
+npm-debug.log
+
+# =========================
+# Other
+# =========================
+*.class
+*.jar
+*.exe
+
