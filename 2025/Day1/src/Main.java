@@ -1,4 +1,3 @@
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -17,11 +16,16 @@ public class Main {
             int rotation = Integer.parseInt(line.substring(1));
 
             if (rotation >= 100) {
+                int firstNumber = rotation / 100;
+                zeros = zeros + firstNumber;
                 rotation = rotation % 100;
             }
 
             if (direction == 'L') {
                 if (dial - rotation < 0) {
+                    if (dial != 0) {
+                        zeros++;
+                    }
                     dial = 100 + dial - rotation;
                 }
                 else if (dial - rotation >= 0) {
@@ -31,6 +35,9 @@ public class Main {
             }
             if (direction == 'R') {
                 if (dial + rotation > 100) {
+                    if (dial != 0) {
+                        zeros++;
+                    }
                     dial = (dial + rotation) - 100;
                 }
                 else if (dial + rotation <= 100) {
