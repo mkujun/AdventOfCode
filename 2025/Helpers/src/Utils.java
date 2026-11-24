@@ -120,8 +120,50 @@ public class Utils {
         return result;
     }
 
-    private static boolean inBounds(int x, int y, int width, int height) {
+    protected static boolean inBounds(int x, int y, int width, int height) {
         return x >= 0 && x < width && y >= 0 && y < height;
+    }
+
+    protected static List<String> getSouroundingGridElements(String[][] grid, int i, int j, int width, int height) {
+        List<String> result = new ArrayList<>();
+
+        // top row left
+        if (Utils.inBounds(i-1, j-1, width, height)) {
+            result.add(grid[i-1][j-1]);
+        }
+        // top row center
+        if (Utils.inBounds(i-1, j, width, height)) {
+            result.add(grid[i-1][j]);
+        }
+        // top row right
+        if (Utils.inBounds(i-1, j+1, width, height)) {
+            result.add(grid[i-1][j+1]);
+        }
+
+        // center left
+        if (Utils.inBounds(i, j-1, width, height)) {
+            result.add(grid[i][j-1]);
+        }
+        // center right
+        if (Utils.inBounds(i, j+1, width, height)) {
+            result.add(grid[i][j+1]);
+        }
+
+        // bottom row left
+        if (Utils.inBounds(i+1, j-1, width, height)) {
+            result.add(grid[i+1][j-1]);
+        }
+        // bottom row center
+        if (Utils.inBounds(i+1, j, width, height)) {
+            result.add(grid[i+1][j]);
+        }
+        // bottom row right
+        if (Utils.inBounds(i+1, j+1, width, height)) {
+            result.add(grid[i+1][j+1]);
+        }
+
+
+        return result;
     }
 
     private static int gcd(int a, int b) {
